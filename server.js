@@ -26,6 +26,9 @@ app.use('/api', categoryRoutes)
 app.use('/api', productRoutes)
 app.use('/api', sellerRoutes)
 
+app.use('/api/home', require('./routes/home/homeRoutes'))
+app.use('/api',require('./routes/home/customerAuthRoutes'))
+
 const port = process.env.PORT || 5000
 dbConnect()
 app.listen(port, () => console.log(`Server is running on port ${port}`))
